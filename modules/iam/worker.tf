@@ -64,6 +64,21 @@ resource "aws_iam_role_policy" "worker" {
         "ecr:BatchGetImage"
       ],
       "Resource": "*"
+    },
+    {
+        "Effect": "Allow",
+        "Action": "route53:ListHostedZonesByName",
+        "Resource": "*"
+    },
+    {
+        "Effect": "Allow",
+        "Action": "elasticloadbalancing:DescribeLoadBalancers",
+        "Resource": "*"
+    },
+    {
+        "Effect": "Allow",
+        "Action": "route53:ChangeResourceRecordSets",
+        "Resource": "*"
     }
   ]
 }
